@@ -10,3 +10,31 @@
 #ACCOUNT_HEADER_ID {
   z-index: 900;
 }
+
+.network-banner {
+  width: 100%;
+  padding: 1px 30px;
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+}
+
+.network-banner-title {
+  opacity: 0.777;
+  filter: blur(1.2px);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .network-banner {
+    text-align: left;
+  }
+  .account {
+    justify-content: flex-end;
+  }
+}
