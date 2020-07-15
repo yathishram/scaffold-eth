@@ -161,7 +161,8 @@ export default function Account(props) {
     if (web3Modal.cachedProvider) {
       loadWeb3Modal();
     }
-  }, [loadWeb3Modal]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const tokenContract = props.localProvider;
 
