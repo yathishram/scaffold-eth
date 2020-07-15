@@ -1,6 +1,6 @@
 import { RelayProvider } from '@opengsn/gsn';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import { Button } from 'antd';
+import { Button, Spin } from 'antd';
 import BurnerProvider from 'burner-provider';
 import { ethers } from 'ethers';
 import React, { useCallback, useEffect } from 'react';
@@ -168,11 +168,13 @@ export default function Account(props) {
 
   let display = '';
   display = (
-    <span>
+    <div className="flex-center">
       {props.address ? (
         <Address value={props.address} ensProvider={props.mainnetProvider} />
       ) : (
-        'Connecting...'
+        <span>
+          <Spin /> Connecting
+        </span>
       )}
       <Balance
         address={props.address}
@@ -185,7 +187,7 @@ export default function Account(props) {
         ensProvider={props.mainnetProvider}
         price={props.price}
       />
-    </span>
+    </div>
   );
 
   return (

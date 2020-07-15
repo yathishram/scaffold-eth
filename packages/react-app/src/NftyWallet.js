@@ -1,5 +1,5 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Badge, Button, Col, Row, Tabs } from 'antd';
+import { Badge, Button, Tabs } from 'antd';
 import React, { useEffect, useState } from 'react';
 import AllNiftyInks from './AllNiftyInks.js';
 import { Account } from './components';
@@ -161,52 +161,29 @@ export default function NftyWallet(props) {
     );
   }
 
-  let networkBanner = 'localhost';
-  if (process.env.REACT_APP_NETWORK_NAME) {
-    networkBanner = process.env.REACT_APP_NETWORK_NAME;
-  }
-
   return (
     <>
-      <div
-        className="network-banner"
-        style={{
-          backgroundColor: process.env.REACT_APP_NETWORK_NAME
-            ? process.env.REACT_APP_NETWORK_COLOR
-            : '#aaa',
-        }}
-      >
-        <Row>
-          <Col xs={24} lg={12}>
-            <div className="network-banner-title">{networkBanner}</div>
-          </Col>
-          <Col xs={24} lg={12}>
-            <Account
-              address={props.address}
-              setAddress={props.setAddress}
-              localProvider={props.localProvider}
-              injectedProvider={props.injectedProvider}
-              setInjectedProvider={props.setInjectedProvider}
-              mainnetProvider={props.mainnetProvider}
-              price={props.price}
-              minimized={props.minimized}
-              setMetaProvider={props.setMetaProvider}
-              metaProvider={props.metaProvider}
-              gsnConfig={props.gsnConfig}
-            />
-          </Col>
-        </Row>
-      </div>
+      <Account
+        address={props.address}
+        setAddress={props.setAddress}
+        localProvider={props.localProvider}
+        injectedProvider={props.injectedProvider}
+        setInjectedProvider={props.setInjectedProvider}
+        mainnetProvider={props.mainnetProvider}
+        price={props.price}
+        minimized={props.minimized}
+        setMetaProvider={props.setMetaProvider}
+        metaProvider={props.metaProvider}
+        gsnConfig={props.gsnConfig}
+      />
 
       <Tabs
         activeKey={tab}
         onChange={setTab}
         style={{ textAlign: 'center' }}
-        tabBarExtraContent={''}
         defaultActiveKey="1"
       >
         <TabPane
-          defaultActiveKey="1"
           tab={
             <>
               <span style={{ fontSize: 24, padding: 8 }}>🧑‍🎨 Nifty Ink</span>

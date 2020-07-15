@@ -11,30 +11,27 @@
   z-index: 900;
 }
 
-.network-banner {
-  width: 100%;
-  padding: 1px 30px;
-  color: #fff;
-  font-size: 32px;
-  text-align: center;
-}
-
-.network-banner-title {
-  opacity: 0.777;
-  filter: blur(1.2px);
-}
-
 .account {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
 }
 
-@media (min-width: 992px) {
-  .network-banner {
-    text-align: left;
-  }
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 1300px) {
   .account {
-    justify-content: flex-end;
+    position: absolute;
+    z-index: 10;
+    top: 5px;
+    right: 5px;
+    padding: 0;
+    border: none;
+    font-size: 20px;
   }
 }
